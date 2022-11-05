@@ -1,0 +1,41 @@
+div.app-page{
+    height: 99vh;
+    overflow: hidden;
+    padding: 5px 10px 0px;
+
+    div.header{
+        height: 20%;
+        margin-bottom: 10px;
+        app-header{margin-bottom: 20px;}
+    }
+
+    div.body{
+        height: 80%;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+
+        app-sidebar{
+            flex: 0.2;
+            height: 100%;
+        }
+        app-mainpage{
+            flex: 0.8;
+            height: 100%;
+            overflow-y: auto;
+
+            &::-webkit-scrollbar {
+                width: 5px;
+            }
+            &::-webkit-scrollbar-track {
+                background: #f1f1f1;
+            }
+            &::-webkit-scrollbar-thumb {
+                background: #a9a9a9;
+            }
+            &::-webkit-scrollbar-thumb:hover {
+                background: #555;
+            }
+        }
+    }
+}

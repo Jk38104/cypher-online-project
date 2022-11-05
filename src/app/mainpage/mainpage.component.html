@@ -1,0 +1,83 @@
+<div class="body-container">
+    <div class="mainbody">
+        <img class="back-img" src="assets/back.png" alt="">
+
+        <div class="input-search">
+            <div class="input-container">
+                <div class="top-search-box">
+                    <div class="input-box input-{{i}}" *ngFor="let item of topInputItem;let i=index;">
+                        <span class="input-label">{{item?.label}}</span>
+                        <div class="input-field">
+                            <input type="text" placeholder="{{item?.placeholder}}" />
+                            <span class="search-icon"><img src="assets/search.png" alt=""></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="below-search-box">
+                    <div class="more-inputs">
+                        <div class="input-box input-{{i}}" *ngFor="let item of belowInputItem;let i=index;">
+                            <div class="input-field2" *ngIf="!item?.isSearchable">
+                                <span class="search-icon2"><img src="assets/down-arrow.png" alt=""></span>
+                                <input class="input-type2" type="text" placeholder="{{item?.placeholder}}" />
+                            </div>
+                            <div class="input-field" *ngIf="item?.isSearchable">
+                                <input class="input-type" type="text" placeholder="{{item?.placeholder}}" />
+                                <span class="search-icon"><img src="assets/search.png" alt=""></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input-btns">
+                        <button class="blue-bgColor">Search</button>
+                        <button class="blue-bgColor">Reset</button>
+                    </div>
+                </div>
+
+                <span class="up-arrow"><img src="assets/arrow-up.png" alt="" /></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="filter">
+        <div class="buttons-box">
+            <button id="item-{{i}}" [class]="item?.isBlue ? 'blue-bgColor': 'gray-bgColor'" *ngFor="let item of buttonsItem;let i=index;">
+                <span style="margin-bottom:2.5px;">{{item?.label}}</span>
+                <span>{{item?.unit}}</span>
+            </button>
+        </div>
+
+        <div class="side-options">
+            <img class="bookmark" src="assets/bookmark.png" alt="" />
+            <img class="download" src="assets/downloads.png" alt="" />
+            <div class="pegination">
+                <img class="left" src="assets/left-chevron.png" alt="">
+                <span>5</span>
+                <img class="right" src="assets/next.png" alt="">
+            </div>
+            <div class="per-page">
+                <span class="label">Per Page</span>
+                <div class="page-num">
+                    <span>50</span>
+                    <img src="assets/down-arrow.png" alt="" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="table">
+        <table>
+            <thead>
+                <th id="th-{{th}}" 
+                    [ngStyle]="{'width': th=='Product' ? '15%' : th=='Unit Price' ? '11%' : 'auto'}" 
+                    *ngFor="let th of tableHeads;let i=index;">
+                    {{th}}
+                </th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let tr of [1,2,3,4,5];">
+                    <td *ngFor="let td of tableHeads;"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,23 @@
+<div class="navbar">
+    <div class="dashboard">
+        <div class="top-tools">
+            <img src="assets/minus.png" alt="">
+            <img src="assets/squares.png" alt="">
+            <img src="assets/close.png" alt="">
+        </div>
+        <div class="content">
+            <span class="left-box">
+                <img class="monitor" src="assets/monitor.png" alt="">
+                <span class="title">Dashboard</span>
+            </span>
+            
+            <img class="arrow" src="assets/down-arrow.png" alt="">
+        </div>
+    </div>
+
+    <div class="other-options">
+        <div class="option menu-{{i}}" *ngFor="let item of menuItems;let i=index;">
+            <span>{{item}}</span>
+        </div>
+    </div>
+</div>

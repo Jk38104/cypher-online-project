@@ -1,0 +1,13 @@
+<div class="sidebar">
+    <div class="sidebar-head">
+        <img src="assets/filter.png" alt="">
+        <span>Custom Filter</span>
+    </div>
+
+    <div class="sidebar-list">
+        <div class="list-item item-{{i}}" *ngFor="let item of sidebarItems;let i=index;">
+            <span>{{item}}</span>
+            <img class="arrow" src="assets/down-arrow.png" alt="">
+        </div>
+    </div>
+</div>
